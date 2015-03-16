@@ -1,0 +1,31 @@
+Send a message to your mentor describing in your own words:
+
+the difference between a View and a View Controller
+the difference between an Outlet and an Action
+the difference between a Class and an Instance
+
+
+View vs. View Controller
+
+A view has multiple meanings in iOS programming.
+
+At the code level, a View refers to an instance of UIView and its many subclasses, like UIButton and UILabel. UIView also inherits from UIResponder, and therefore can respond to a touch event.
+
+At a higher conceptual level, views are both what the user sees and are what responds to a user's touch. At any given point in time, a user sees one or more view elements, and some of these view elements (like a UIButton) can be programmed to respond to a touch event. These elements are organized into a view hierarchy, with the root view at the top of the hierarchy.
+
+A view controller controls the UIView elements hopefully in a logical fashion. A view controller  controls one main view (its view property) and multiple subviews, such as buttons, labels and sliders. Another view controller can be employed when the main view changes.
+
+
+OUTLETS VS. ACTIONS
+
+The view objects that are part of a storyboard cannot do anything by themselves.
+
+An outlet is code written in the view controller that can alter the view objects that are part of the user interface. For instance, a label can be changed within the storyboard by defining an outlet in the view controller and connecting it to the label on the storyboard. You can then change the label's text within the view controller code, and this reaches into the storyboard and changes what the user sees.
+
+An action triggers methods in the view controller from the storyboard or nib file. This goes in the opposite direction from an outlet. For instance, a user can press a button on the interface and this can cause a specific action method to be executed in the view controller.
+
+CLASS VS. INSTANCE
+
+A Class is the blueprint for its instances or objects. The class defines the behaviors (methods) and data that form part of its instances. It can also define class-wide methods and properties to store behavior and data common to the class.
+An Instance is an object created from this blueprint. This instance can be identical to another instance, or completely different.
+For instance, the Car class could have a color property. Differenct instances of Car could be red, green, blue etc. The Car class could define hundreds or even thousands of behaviors and properties or just a few depending on the complexity of the software being developed.

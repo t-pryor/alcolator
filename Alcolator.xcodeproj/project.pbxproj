@@ -14,6 +14,7 @@
 		22AB0C121AB70EE10036C053 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AB0C111AB70EE10036C053 /* Images.xcassets */; };
 		22AB0C151AB70EE10036C053 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22AB0C131AB70EE10036C053 /* LaunchScreen.xib */; };
 		22AB0C211AB70EE10036C053 /* AlcolatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AB0C201AB70EE10036C053 /* AlcolatorTests.m */; };
+		22CD0B3D1AB76F700071768B /* NOTES in Resources */ = {isa = PBXBuildFile; fileRef = 22CD0B3C1AB76F700071768B /* NOTES */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		22AB0C1A1AB70EE10036C053 /* AlcolatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlcolatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AB0C1F1AB70EE10036C053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AB0C201AB70EE10036C053 /* AlcolatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlcolatorTests.m; sourceTree = "<group>"; };
+		22CD0B3C1AB76F700071768B /* NOTES */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTES; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				22AB0C111AB70EE10036C053 /* Images.xcassets */,
 				22AB0C131AB70EE10036C053 /* LaunchScreen.xib */,
 				22AB0C041AB70EE10036C053 /* Supporting Files */,
+				22CD0B3C1AB76F700071768B /* NOTES */,
 			);
 			path = Alcolator;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				22AB0C101AB70EE10036C053 /* Main.storyboard in Resources */,
 				22AB0C151AB70EE10036C053 /* LaunchScreen.xib in Resources */,
+				22CD0B3D1AB76F700071768B /* NOTES in Resources */,
 				22AB0C121AB70EE10036C053 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +416,7 @@
 				22AB0C261AB70EE10036C053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22AB0C271AB70EE10036C053 /* Build configuration list for PBXNativeTarget "AlcolatorTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				22AB0C291AB70EE10036C053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
