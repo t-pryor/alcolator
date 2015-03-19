@@ -1,0 +1,38 @@
+HOW A VIEW CONTROLLER GETS ITS VIEW
+
+When it first comes into existence, a view controller has no view
+A VC is a small, lightweight object; a view is a relatively heavyweight object, involving interface elements that occupy memory.
+A VC postpones obtaining its view until it has to do so, namely when it is asked for the value of its view property.
+At that moment, if its view property is nil, the view controller sets about obtaining its view.
+(The VC loads its view lazily)
+Typically this happens because it is time to put the view controller's view into the interface.
+
+In working with a newly instantiated view controller, be careful not to refer to its view property if you don't need to, since this will trigger the view controller's obtaining its view prematurely.
+
+To learn whether a view controller has a view without causing it to load its view, call *isViewLoaded*
+
+As soon as a VC has its view, its viewDidLoad method is called.
+If this VC is an instance of your own UIViewController subclass, viewDidLoad is your opportunity to modify the contents of this view-to populate it with subviews, to tweak the subviews it already has-as well as to perform other initializations of the view controller consonent with its acquisition of a view.
+The view property is now pointing to the view, so it is safe to refer to self.view.
+
+The view may not yet be part of the interface-self.view.window will be nil.
+You cannot necessarily rely on the dimensions of the view at this point to be the dimensions that the view will assume when it becomes visible in the interface.
+Performing certain customizations in viewDidLoad is a common mistake.
+Before viewDidLoad will be called, the VC must obtain its view.
+Question of where and how the view controller gets its view is often crucial.
+
+When a view controller is an instance of a built-in UIViewController subclass such as UINavigationController its view is out of your hands-you might never have cause to refer to it over the course of your app's lifetime.
+
+When the VC is an instance of your own subclass of UIViewController, and when you yourself will design or modify its view, it becomes essential to understand the process whereby a view controller get its view.
+
+The alternatives:
+-The view may be created in the view controller's own code, manually.
+-The view may be created as an empty generic view, automatically.
+-The view may be created in its own separate nib.
+-The view may be created in a nib, which is the same nib from which the controller itself is instantiated.
+
+*MANUAL VIEW*
+-To supply a UIViewController's view manually, in code, implement its loadView method
+-Your job is to obtain an instance of UIView (or a subclass of UIView) and assign it to self.view.
+-You must not call super
+-don't confuse loadView with viewDidLoad

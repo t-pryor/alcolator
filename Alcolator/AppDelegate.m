@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BLCViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  
+  // create the Window
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+  // create our view controller
+  BLCViewController *viewController = [[BLCViewController alloc] init];
+  
+  // assign it to the window's rootViewController
+  self.window.rootViewController = viewController;
+  // set the window as the application's key window
+  [self.window makeKeyAndVisible];
+  
   return YES;
 }
 
