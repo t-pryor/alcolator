@@ -14,6 +14,11 @@
 
 @implementation BLCWhiskeyViewController
 
+- (void) viewDidLoad {
+  [super viewDidLoad];
+  self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+}
+
 // override buttonPressed
 - (void)buttonPressed:(UIButton *)sender {
   [self.beerPercentTextField resignFirstResponder];

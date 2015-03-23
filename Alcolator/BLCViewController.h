@@ -17,9 +17,7 @@
 in order to let outsiders(including subclasses) make use of these secret methods
 and /or properties, a class must make them public by announcing them in the .h file
  
-
 */
-
 
 
 #import <UIKit/UIKit.h>

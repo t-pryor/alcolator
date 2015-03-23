@@ -125,6 +125,8 @@
   // Tells the tap gesture recognizer to call '[self -tapGestureDidfire:]' when it detects a tap
   [self.hideKeyboardTapGestureRecognizer addTarget:self action:@selector(tapGestureDidFire:)];
   
+  self.title = NSLocalizedString(@"Wine", @"wine");
+  
 }
 
 // called whenever self.view is about to resize its subviews

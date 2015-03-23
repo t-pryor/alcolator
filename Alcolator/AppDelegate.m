@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BLCViewController.h"
+#import "BLCMainMenuViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,11 +23,21 @@
   // create the Window
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
-  // create our view controller
-  BLCViewController *viewController = [[BLCViewController alloc] init];
+  // mainMenuViewController is an instance of BLCMainMenuViewController, a subclass of UIViewController
+  BLCMainMenuViewController *mainMenuViewController = [[BLCMainMenuViewController alloc] init];
+  // initialize a UINavigationController with mainMenuViewController
+  // when you initialize an instance of UINavigationController, you give it one UIViewController
+  // This is the navigation controller's root view controller-bottom of the stack
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
+  // set the window's root VC to navigationController
+  self.window.rootViewController = navigationController;
+  
+  
+  NSLog(@"%@", navigationController.viewControllers);
+  
   
   // assign it to the window's rootViewController
-  self.window.rootViewController = viewController;
+  // self.window.rootViewController = viewController;
   // set the window as the application's key window
   [self.window makeKeyAndVisible];
   
