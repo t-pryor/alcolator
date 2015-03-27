@@ -1,0 +1,42 @@
+IOS DESIGN PATTERNS-DELEGATION AND PROTOCOLS
+
+INTRO
+
+Objects frequently need to communicate with each other
+When you write code in which two objects communicate, you run the risk of increasing coupling and reducing cohesion
+
+Coupling: How much two classes need to know about each other to work
+
+Cohesion: How closely related the code in one class is
+
+Good code minimizes coupling and maximizes cohesion.
+
+Ex:
+The UITextField class knows nothing about the BLCViewController class.
+The BLCViewController only knows a minimal amount about the UITextField class.
+
+Despite the lack of knowledge about each other, the two classes are able to communicate perfectly: they have low coupling.
+
+WHY COUPLING IS BAD
+
+E.G. if you made your own text field, you might end up with a text field that only worked on the sliding calculator view controller. Two downsides:
+1. Low reusability: Your text field might not be reusable on other screens
+2. Low cohesion: Your view controller might get filled with lots of code related to keyboard louyouts, cut and paste, and spell-check.
+    => more complex, more confusing to read and more difficult to maintain.
+
+TERMS TO KNOW
+A *delegate* is an object that acts:
+  in response to something that happens in another object or
+  in coordination with another object
+
+Objects use protocols to communicate with their delegates
+
+A *protocol* declares which methods to use in which situations.
+They also describe which methods are optional and which you must implement for proper operation
+
+The main purpose of a protocol is to define a language for two objects to communicate, while sharing a minimal amount of info about each other.
+
+CONFORMING TO A PROTOCOL is when an object imlements all of the required methods and possibly some optional ones
+An interface must declare which protocols it conforms to by specifying the protocol in <angle brackets>
+
+A DATA SOURCE works exactly like a delegate, with one conceptual difference: while a delegate controls the UI, a data source controls data

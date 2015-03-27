@@ -8,40 +8,34 @@
 
 #import "AppDelegate.h"
 #import "BLCViewController.h"
-#import "BLCMainMenuViewController.h"
+#import "BLCWhiskeyViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-  
-  // create the Window
+
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   
-  // mainMenuViewController is an instance of BLCMainMenuViewController, a subclass of UIViewController
-  BLCMainMenuViewController *mainMenuViewController = [[BLCMainMenuViewController alloc] init];
-  // initialize a UINavigationController with mainMenuViewController
-  // when you initialize an instance of UINavigationController, you give it one UIViewController
-  // This is the navigation controller's root view controller-bottom of the stack
-  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
-  // set the window's root VC to navigationController
-  self.window.rootViewController = navigationController;
+  BLCViewController *wineVC = [[BLCViewController alloc] init];
+  BLCWhiskeyViewController *whiskeyVC = [[BLCWhiskeyViewController alloc] init];
+  UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+  tabBarVC.viewControllers = @[wineVC, whiskeyVC];
+  tabBarVC.delegate = self;
   
+  self.window.rootViewController = tabBarVC;
   
-  NSLog(@"%@", navigationController.viewControllers);
-  
-  
-  // assign it to the window's rootViewController
-  // self.window.rootViewController = viewController;
-  // set the window as the application's key window
   [self.window makeKeyAndVisible];
   
   return YES;
+}
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+  NSLog(@"New view controller selected: %@", viewController.title);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

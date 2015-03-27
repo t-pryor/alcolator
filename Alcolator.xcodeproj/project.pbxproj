@@ -19,6 +19,7 @@
 		22CD0B741AB9AD9D0071768B /* NOTES-NSLocalizedString in Resources */ = {isa = PBXBuildFile; fileRef = 22CD0B731AB9AD9D0071768B /* NOTES-NSLocalizedString */; };
 		22CD0B761AB9DC620071768B /* NOTES-frames and bounds in Resources */ = {isa = PBXBuildFile; fileRef = 22CD0B751AB9DC620071768B /* NOTES-frames and bounds */; };
 		22CD0BFC1ABB54610071768B /* BLCMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CD0BFB1ABB54610071768B /* BLCMainMenuViewController.m */; };
+		22CD0C601AC5A9130071768B /* NOTES-Delegation and Protocols in Resources */ = {isa = PBXBuildFile; fileRef = 22CD0C5F1AC5A9130071768B /* NOTES-Delegation and Protocols */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		22CD0B751AB9DC620071768B /* NOTES-frames and bounds */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "NOTES-frames and bounds"; sourceTree = "<group>"; };
 		22CD0BFA1ABB54610071768B /* BLCMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMainMenuViewController.h; sourceTree = "<group>"; };
 		22CD0BFB1ABB54610071768B /* BLCMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMainMenuViewController.m; sourceTree = "<group>"; };
+		22CD0C5F1AC5A9130071768B /* NOTES-Delegation and Protocols */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "NOTES-Delegation and Protocols"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				22AB0C081AB70EE10036C053 /* AppDelegate.h */,
 				22AB0C091AB70EE10036C053 /* AppDelegate.m */,
+				22CD0C5F1AC5A9130071768B /* NOTES-Delegation and Protocols */,
 				22CD0BFA1ABB54610071768B /* BLCMainMenuViewController.h */,
 				22CD0BFB1ABB54610071768B /* BLCMainMenuViewController.m */,
 				22AB0C0B1AB70EE10036C053 /* BLCViewController.h */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22CD0B741AB9AD9D0071768B /* NOTES-NSLocalizedString in Resources */,
+				22CD0C601AC5A9130071768B /* NOTES-Delegation and Protocols in Resources */,
 				22CD0B761AB9DC620071768B /* NOTES-frames and bounds in Resources */,
 				22AB0C151AB70EE10036C053 /* LaunchScreen.xib in Resources */,
 				22CD0B3D1AB76F700071768B /* NOTES in Resources */,

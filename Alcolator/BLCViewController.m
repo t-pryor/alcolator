@@ -21,15 +21,23 @@
 
 @implementation BLCViewController
 
+-(instancetype) init {
+  self = [super init];
+  
+  if (self) {
+    self.title = NSLocalizedString(@"Wine", @"wine");
+  }
+  
+  [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+  
+  return self;
+}
+
 -(void)loadView {
-  // This method creates the view that the controller manages
-  // The view controller calls this method when its view property is requested
-  // This method loads or creates a view and assigns it to the view property
   
   // Allocate and initialize the all-encompassing view
   self.view = [[UIView alloc] init];
 
-  
   // Allocate and initialize each of our views and the gesture recognizer
   UITextField *textField = [[UITextField alloc] init];
   UISlider *slider = [[UISlider alloc] init];
@@ -55,17 +63,10 @@
 - (void)viewDidLoad {
   
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
-  // Customize the views created in loadView
   
-  // Set our primary view's background color to lightGrayColor
   self.view.backgroundColor = [UIColor yellowColor];
   
-  
   /* beerPercentTextField Settings */
-  
-  // Tells the text field that 'self', this instance of 'BLCViewController'
-  // should be treated as teh text field's delegate
   self.beerPercentTextField.delegate = self;
   
   // Set the placeholder text
@@ -81,8 +82,6 @@
   
   /* beerCountSlider Settings */
   
-  // Tells 'self.beerCountSlider' that when its value changes it should call [self -sliderValueDidChange:]'.
-  // This is equivalent to connecting the IBAction in our previous checkpoint
   [self.beerCountSlider addTarget:self action:@selector(sliderValueDidChange:) forControlEvents:UIControlEventValueChanged];
 
   // Set the minimum and maximum number of beers
@@ -108,9 +107,6 @@
   [self.calculateButton setTitle:NSLocalizedString(@"Calculate!",@"Calculate command")
                         forState:UIControlStateNormal];
   
-  // Set the calculateButton's font
-  // Need to access its titleLabel; setting button font directly is deprecated
-  // http://stackoverflow.com/questions/4206848/setfont-deprecated
   [self.calculateButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:24]];
   
   self.calculateButton.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
@@ -124,12 +120,10 @@
   // Tells the tap gesture recognizer to call '[self -tapGestureDidfire:]' when it detects a tap
   [self.hideKeyboardTapGestureRecognizer addTarget:self action:@selector(tapGestureDidFire:)];
   
-  self.navigationItem.title = NSLocalizedString(@"Wine", @"wine");
+  self.view.backgroundColor = [UIColor colorWithRed:0.741 green:0.925 blue:0.714 alpha:1.0];
   
 }
 
-// called whenever self.view is about to resize its subviews
-// most common case is on device rotation
 - (void) viewWillLayoutSubviews {
   
   [super viewWillLayoutSubviews];
@@ -149,16 +143,8 @@
   // need extra room to print out results of calculation
   CGFloat resultLabelHeight = 100;
   
-  // A frame is a view's location with respect to its parent view or superview
-  // A frame is of type CGRect which is a structure that stores a CGPoint and a CGSize
-  // A CGPoint consists of an x and y which specifiy a coordinate on screen
-  // A CGSize object consists of a width and a height
-  // The CGPoint specifies the top-left coordinate where the view begins and the CGSize represents the view's width and height
-  
-  // CGRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
-  // CGRectMake(howFarFromTheLeft, howFarFromTheTop, howWide, howTall)
   self.beerPercentTextField.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-  // This
+
   CGFloat bottomOfBeerPercentTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
   
   self.beerCountSlider.frame = CGRectMake(padding, bottomOfBeerPercentTextField + padding, itemWidth, itemHeight);
@@ -196,7 +182,7 @@
   self.numberOfBeers.text = beersText;
   NSLog(@"Slider value changed to %li", [sliderValue longValue]);
   [self.beerPercentTextField resignFirstResponder];
-  
+  [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
 }
   
 
