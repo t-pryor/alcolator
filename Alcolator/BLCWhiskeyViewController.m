@@ -16,7 +16,7 @@
 
 - (void) viewDidLoad {
   [super viewDidLoad];
-  self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+  self.navigationItem.title = NSLocalizedString(@"Whiskey", @"whiskey");
 }
 
 // override buttonPressed
@@ -59,20 +59,8 @@
                                         
   self.resultLabel.text = resultText;
   
-  
+  self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"Whiskey: %.lf %@", nil), numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
 }
 
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

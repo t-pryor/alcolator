@@ -28,8 +28,7 @@
   
   // Allocate and initialize the all-encompassing view
   self.view = [[UIView alloc] init];
-  
-  // STEVE: WHY CREATE THEN ASSIGN?
+
   
   // Allocate and initialize each of our views and the gesture recognizer
   UITextField *textField = [[UITextField alloc] init];
@@ -125,7 +124,7 @@
   // Tells the tap gesture recognizer to call '[self -tapGestureDidfire:]' when it detects a tap
   [self.hideKeyboardTapGestureRecognizer addTarget:self action:@selector(tapGestureDidFire:)];
   
-  self.title = NSLocalizedString(@"Wine", @"wine");
+  self.navigationItem.title = NSLocalizedString(@"Wine", @"wine");
   
 }
 
@@ -243,11 +242,15 @@
   // generate the result text, and display it on the label
   NSString *resultText =
     [NSString stringWithFormat:
-     NSLocalizedString(@"%d %@ contains as much alcohol as % .lf %@ of wine.", nil),
+     NSLocalizedString(@"%d %@ contains as much alcohol as %.lf %@ of wine.", nil),
      numberOfBeers, beerText, numberOfWineGlassesForEquivalentAlcoholAmount,
      wineText];
   self.resultLabel.text = resultText;
+  
+  self.navigationItem.title = [NSString stringWithFormat: NSLocalizedString(@"Wine: %.lf %@", nil), numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
 }
+
+//NSString* formattedNumber = [NSString stringWithFormat:@"%.02f", myFloat];
 
 - (void)tapGestureDidFire:(UITapGestureRecognizer *)sender {
   
